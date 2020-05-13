@@ -8,27 +8,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
-        <!-- all css here -->
-        <!-- bootstrap v3.3.6 css -->
-        <link rel="stylesheet" href="{{ asset('/frontend/css/bootstrap.min.css') }}">
-        <!-- animate css -->
-        <link rel="stylesheet" href="{{ asset('/frontend/css/animate.css') }}">
-        <!-- meanmenu css -->
-        <link rel="stylesheet" href="{{ asset('/frontend/css/meanmenu.min.css') }}">
-        <!-- owl.carousel css -->
-        <link rel="stylesheet" href="{{ asset('/frontend/css/owl.carousel.css') }}">
-        <!-- font-awesome css -->
-        <link rel="stylesheet" href="{{ asset('/frontend/css/font-awesome.min.css') }}">
-        <!-- flexslider.css-->
-        <link rel="stylesheet" href="{{ asset('/frontend/css/flexslider.css') }}">
-        <!-- chosen.min.css-->
-        <link rel="stylesheet" href="{{ asset('/frontend/css/chosen.min.css') }}">
-        <!-- style css -->
-        <link rel="stylesheet" href="{{ asset('/frontend/style.css') }}">
-        <!-- responsive css -->
-        <link rel="stylesheet" href="{{ asset('/frontend/css/responsive.css') }}">
-        <!-- modernizr css -->
-        <script src="{{ asset('/frontend/js/vendor/modernizr-2.8.3.min.js') }}"></script>
+
+        <!-- CSS here -->
+        <link rel="stylesheet" href="{{asset('frontend/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/owl.carousel.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/flaticon.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/slicknav.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/animate.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/magnific-popup.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/fontawesome-all.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/themify-icons.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/slick.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/nice-select.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
     </head>
     <body>
         <!-- header-area-start -->
@@ -37,34 +29,43 @@
         <!-- banner-area-start -->
         @yield('content')
         <!-- banner-static-area-end -->
-                <!-- testimonial-area-start -->
+        <!-- testimonial-area-start -->
         @include('users.shared.footer')
-        <!-- testimonial-area-end -->
-        <script src="{{ asset('/frontend/js/vendor/jquery-1.12.0.min.js') }}"></script>
-        <!-- bootstrap js -->
-        <script src="{{ asset('/frontend/js/bootstrap.min.js') }}"></script>
-        <!-- owl.carousel js -->
-        <script src="{{ asset('/frontend/js/owl.carousel.min.js') }}"></script>
-        <!-- meanmenu js -->
-        <script src="{{ asset('/frontend/js/jquery.meanmenu.js') }}"></script>
-        <!-- wow js -->
-        <script src="{{ asset('/frontend/js/wow.min.js') }}"></script>
-        <!-- jquery.parallax-1.1.3.js -->
-        <script src="{{ asset('/frontend/js/jquery.parallax-1.1.3.js') }}"></script>
-        <!-- jquery.countdown.min.js -->
-        <script src="{{ asset('/frontend/js/jquery.countdown.min.js') }}"></script>
-        <!-- jquery.flexslider.js -->
-        <script src="{{ asset('/frontend/js/jquery.flexslider.js') }}"></script>
-        <!-- chosen.jquery.min.js -->
-        <script src="{{ asset('/frontend/js/chosen.jquery.min.js') }}"></script>
-        <!-- jquery.counterup.min.js -->
-        <script src="{{ asset('/frontend/js/jquery.counterup.min.js') }}"></script>
-        <!-- waypoints.min.js -->
-        <script src="{{ asset('/frontend/js/waypoints.min.js') }}"></script>
-        <!-- plugins js -->
-        <script src="{{ asset('/frontend/js/plugins.js') }}"></script>
-        <!-- main js -->
-        <script src="{{ asset('/frontend/js/main.js') }}"></script>
+        <!-- JS here -->
+
+        <!-- All JS Custom Plugins Link Here here -->
+        <script src="{{ asset('frontend/js/modernizr-3.5.0.min.js') }}"></script>
+        <!-- Jquery, Popper, Bootstrap -->
+        <script src="{{ asset('frontend/js/jquery-1.12.4.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/popper.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
+        <!-- Jquery Mobile Menu -->
+        <script src="{{ asset('frontend/js/jquery.slicknav.min.js') }}"></script>
+
+        <!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/slick.min.js') }}"></script>
+
+        <!-- One Page, Animated-HeadLin -->
+        <script src="{{ asset('frontend/js/wow.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/animated.headline.js') }}"></script>
+        <script src="{{ asset('frontend/js/jquery.magnific-popup.js') }}"></script>
+
+        <!-- Scrollup, nice-select, sticky -->
+        <script src="{{ asset('frontend/js/jquery.scrollUp.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/jquery.nice-select.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/jquery.sticky.js') }}"></script>
+
+        <!-- contact js -->
+        <script src="{{ asset('frontend/js/contact.js') }}"></script>
+        <script src="{{ asset('frontend/js/jquery.form.js') }}"></script>
+        <script src="{{ asset('frontend/js/jquery.validate.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/mail-script.js') }}"></script>
+        <script src="{{ asset('frontend/js/jquery.ajaxchimp.min.js') }}"></script>
+
+        <!-- Jquery Plugins, main Jquery -->
+        <script src="{{ asset('frontend/js/plugins.js') }}"></script>
+        <script src="{{ asset('frontend/js/main.js') }}"></script>
     </body>
 </html>
 

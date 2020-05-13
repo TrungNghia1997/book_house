@@ -53,7 +53,8 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <button type="" class="btn btn-primary">submit</button>
+                            <button type="" class="btn btn-success">Thêm</button>
+                            <button type="reset" class="btn btn-primary">Reset</button>
                         </div>
                     </form>
                 </div>

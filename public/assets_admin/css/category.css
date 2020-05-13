@@ -508,12 +508,13 @@ a.bg-danger:hover {
     background-color: #eee;
     color: black;
     display: block;
-    padding: 10px 10px 10px 20px;
+    padding: 7px 10px 10px 20px;
 	text-decoration: none;
-    min-height: 65px;
+    min-height: 55px;
+    height: 50px;
 }
 .vertical-menu .item-menu>span, .vertical-menu .item-menu.active {
-    line-height: 48px;
+    line-height: 40px;
 }
 
 .vertical-menu .item-menu:hover {

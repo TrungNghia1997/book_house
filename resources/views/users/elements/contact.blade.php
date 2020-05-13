@@ -2,21 +2,23 @@
 {{--  --}}
 @section('title', 'Liên hệ')
 @section('content')
-    <div class="breadcrumbs-area mb-70">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumbs-menu">
-                        <ul>
-                            <li><a href="{{url('/')}}">Trang chủ</a></li>
-                            <li><a href="{{url('/')}}lien_he" class="active">Liên hệ</a></li>
-                        </ul>
+    <!-- slider Area Start-->
+    <div class="slider-area ">
+        <!-- Mobile Menu -->
+        <div class="single-slider slider-height2 d-flex align-items-center" data-background="{{ asset('upload/38.jpg') }}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap text-center">
+                            <h2>Liên hệ</h2>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- breadcrumbs-area-end -->
+    <!-- slider Area End-->
+
     <!-- googleMap-area-start -->
     <div class="map-area mb-70">
         <div class="container">
@@ -42,17 +44,17 @@
                                 <li>
                                     <i class="fa fa-map-marker"></i>
                                     <span>Địa chỉ: </span>
-                                    {{$item->address}}
-                                </li>
-                                <li>
-                                    <i class="fa fa-envelope"></i>
-                                    <span>Số điện thoại: </span>
-                                    0{{$item->phone}}
+                                    {{ $item->address }}
                                 </li>
                                 <li>
                                     <i class="fa fa-mobile"></i>
+                                    <span>Số điện thoại: </span>
+                                    {{ $item->phone }}
+                                </li>
+                                <li>
+                                    <i class="fa fa-envelope"></i>
                                     <span>Email: </span>
-                                    <a href="#">{{$item->email}} </a>
+                                    {{ $item->email }}
                                 </li>
                             </ul>
                         @endforeach
@@ -66,23 +68,23 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="single-form-3">
-                                        <input name="name" type="text" placeholder="Họ tên">
+                                        <input name="name" type="text" class="form-control" placeholder="Họ tên">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="single-form-3">
-                                        <input name="email" type="email" placeholder="Email">
+                                        <input name="email" type="email" class="form-control" placeholder="Email">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="single-form-3">
-                                        <input name="subject" type="text" placeholder="Tiêu đề">
+                                        <input name="subject" type="text" class="form-control" placeholder="Tiêu đề">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                      <div class="single-form-3">
-                                        <textarea name="message" placeholder="Nội dung"></textarea>
-                                        <button class="submit" type="submit">Gửi</button>
+                                        <textarea name="message" class="form-control" placeholder="Nội dung"></textarea>
+                                        <button class="btn btn-primary submit margin-top-30px" type="submit">Gửi</button>
                                     </div>
                                 </div>
                             </div>

@@ -28,7 +28,7 @@
                         </div>
                        <div class="form-group">
                             <label for="input-select-images" class="btn btn-danger">Ảnh tác giả</label>
-                            <input id="input-select-images" class="hidden" type="file" name="image_author" required="">
+                            <input id="input-select-images" class="hidden" type="file" name="image_author">
                             <div class="avatar-commic-preview">
                                 <img src="{{$authorRepository->image_author}}" id="profile-img-tag" width="200px"/>
                             </div>

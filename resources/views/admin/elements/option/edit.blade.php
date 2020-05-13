@@ -57,7 +57,7 @@
                             <input type="text" class="form-control" value="{{$optionRepository->address}}" name="address" required="">
                         </div>
                         <div class="text-right">
-                            <button type="submit" class="btn btn-success" name="submit">Thêm</button>
+                            <button type="submit" class="btn btn-success" name="submit">Cập nhật</button>
                             <button type="reset" class="btn btn-primary">Reset</button>
                         </div>
                 </form>

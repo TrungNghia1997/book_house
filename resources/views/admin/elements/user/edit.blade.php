@@ -10,7 +10,7 @@
         <li class="breadcrumb-item">
             <a href="#">Quản lý</a>
         </li>
-        <li class="breadcrumb-item active">Sửa thành viên</li>
+        <li class="breadcrumb-item active">Cập nhật tài khoản</li>
     </ol>
     <div class="container-fluid">
         <div class="animated fadeIn">
@@ -68,7 +68,8 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <button type="" class="btn btn-primary">submit</button>
+                            <button type="" class="btn btn-success">Sửa</button>
+                            <button type="reset" class="btn btn-primary">Reset</button>
                         </div>
                     </form>
                 </div>

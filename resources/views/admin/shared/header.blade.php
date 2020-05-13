@@ -4,7 +4,7 @@
         <div class="navbar-header">
             @foreach($option as $item)
             <a class="navbar-brand" href="{{url('/')}}" style="font-family: 'Abril Fatface', cursive; font-size: 33px;color:black;">
-                <img src="{{$item->logo}}" alt="logo" style="width: 110px; height: 55px; border-radius: 50%;">BOOKS
+                <img src="{{$item->logo}}" alt="logo" style="width: 110px; height: 55px;">BOOKS
             </a>
             @endforeach
             {{-- <a class="navbar-brand hidden" href="./"><img src="/assets_admin/images/logo2.png" alt="Logo"></a> --}}
@@ -41,8 +41,8 @@
                     @endif
                     </a>
                     <div class="user-menu dropdown-menu">
-                        <a class="nav-link" href="{{url('/')}}/admin/user/{{$usercomposer['id']}}/edit"><i class="fa fa- user"></i>My Profile</a>
-                        <a class="nav-link" href="{{url('/')}}/admin/logout"><i class="fa fa-power -off"></i>Logout</a>
+                        <a class="nav-link" href="{{url('/')}}/admin/user/{{$usercomposer['id']}}/edit"><i class="fa fa-user"></i>Cập nhật tài khoản</a>
+                        <a class="nav-link" href="{{url('/')}}/admin/logout"><i class="fa fa-power-off"></i>Đăng xuất</a>
                     </div>
                 </div>
 

@@ -1,115 +1,109 @@
+<!-- Preloader Start -->
+<div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+            <div class="preloader-circle"></div>
+            <div class="preloader-img pere-text">
+                @foreach($option as $item)
+                    <a href="{{url('/')}}"><img src="{{$item->logo}}" alt="logo" /></a>
+                @endforeach
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Preloader Start -->
+
 <header>
-    <div class="auth-login">
-        <div class="container">
-            @if (Auth::check())
-            <div class="nomal-text">
-                Xin chào: <span class="uppercase">{{ Auth::user()->name }}</span> (<a href="{{ url('/dang_xuat') }}"> Đăng xuất</a> )
-            </div>
-            @else
-            <div class="nomal-text"><a href="{{ url('/dang_nhap') }}">Đăng nhập</a> / <a href="{{ url('/dang_ky') }}">Đăng ký</a></div>
-            @endif
-        </div>
-    </div>
-
-    <div class="header-mid-area ptb-40">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-5 col-xs-12">
-                    <div class="header-search">
-                        <form action="{{url('/search')}}" class="search-form" method="GET">
-                            @csrf
-                            <div class="form-elemet has-icon">
-                                <input type="text" id="search" name="search" placeholder="Tìm kiếm tại đây..." />
-                                <a href="#"><i class="fa fa-search"></i></a>
-                                <button type="submit" class="hidden"></button>
+    <!-- Header Start -->
+    <div class="header-area">
+        <div class="main-header ">
+            <div class="header-bottom header-sticky">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <!-- Logo -->
+                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-3" style="padding: 10px 0;">
+                            <div class="logo">
+                                @foreach($option as $item)
+                                    <a href="{{url('/')}}"><img src="{{$item->logo}}" alt="logo" height="70px"/></a>
+                                @endforeach
                             </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-3 col-xs-12">
-                    <div class="logo-area text-center logo-xs-mrg">
-                        @foreach($option as $item)
-                        <a href="{{url('/')}}"><img src="{{$item->logo}}" alt="logo" /></a>
-                        @endforeach
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-                    <div class="my-cart">
-                        <ul>
-                            <li><a href="{{url('/cart/show')}}"><i class="fa fa-shopping-cart"></i>Giỏ hàng</a>
-                                <span>{{Cart::count()}}</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- header-mid-area-end -->
-    <!-- main-menu-area-start -->
-    <div class="main-menu-area hidden-sm hidden-xs sticky-header-1" id="header-sticky">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="menu-area">
-                        <nav>
-                            <ul>
-                                <li class="{{ Request::is('/')? 'active': '' }}"><a href="{{ asset('/') }}">Trang chủ</a>
-                                </li>
+                        </div>
+                        <div class="col-xl-6 col-lg-8 col-md-7 col-sm-5">
+                            <!-- Main-menu -->
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li class="{{ Request::is('/')? 'active': '' }}"><a href="{{ asset('/') }}">Trang chủ</a>
+                                        </li>
 
-                                <li class="{{ (Request::is('san_pham') || substr_count(Request::url(), '/danh_muc/'))? 'active': '' }}">
-                                    <a href="{{ url('/san_pham') }}">Sản phẩm</a>
+                                        <li class="{{ (Request::is('san_pham') || substr_count(Request::url(), '/danh_muc/'))? 'active': '' }}">
+                                            <a href="{{ url('/san_pham') }}">Sản phẩm</a>
+                                        </li>
+                                        <li class="{{ Request::is('sale')? 'active': '' }}"><a href="{{url('/sale')}}">sales off</a></li>
+                                        <li class="{{ Request::is('lien_he')? 'active': '' }}"><a href="{{ url('/lien_he') }}">Liên hệ</a></li>
+                                        <li class="{{ Request::is('gioi_thieu')? 'active': '' }}"><a href="{{ url('/gioi_thieu') }}">Giới thiệu</a></li>
+                                        <li class="hidden-mobile auth-user">
+                                            @if (Auth::check())
+                                                <div class="nomal-text d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
+                                                    <img src="{{ !empty(Auth::user()->avatar)? Auth::user()->avatar: '/upload/no-profile.jpg' }}" alt="loading..." width="45px" height="45px" style="border-radius: 50%;" class="margin-right-5px">
+                                                    <span class="uppercase">{{ Auth::user()->name }}</span>
+                                                </div>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="{{ url('/dang_xuat') }}" class="padding-left-10px"><i class="fa fa-sign-in-alt"></i> Đăng xuất</a></li>
+                                                </ul>
+                                            @else
+                                                <a href="{{ url('/dang_nhap') }}" class="btn header-btn">Đăng nhập</a>
+                                            @endif
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-3 col-md-3 col-sm-3 fix-card">
+                            <ul class="header-right f-right d-none d-lg-block d-flex justify-content-between">
+                                <li class="d-none d-xl-block">
+                                    <div class="form-box f-right ">
+                                        <form action="{{url('/search')}}" class="search-form" id="search-form" method="GET">
+                                            @csrf
+                                            <div class="form-elemet has-icon">
+                                                <input type="text" id="search" name="search" placeholder="Tìm kiếm tại đây..." />
+                                                <div class="search-icon" onclick="$('#search-form').submit()">
+                                                    <i class="fas fa-search special-tag"></i>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </li>
-                                <li class="{{ Request::is('sale')? 'active': '' }}"><a href="{{url('/sale')}}">sales off</a></li>
-                                <li class="{{ Request::is('lien_he')? 'active': '' }}"><a href="{{ url('/lien_he') }}">Liên hệ</a></li>
-                                <li class="{{ Request::is('gioi_thieu')? 'active': '' }}"><a href="{{ url('/gioi_thieu') }}">Giới thiệu chúng tôi</a></li>
+                                <li>
+                                    <div class="shopping-card">
+                                        <a href="{{url('/cart/show')}}"><i class="fas fa-shopping-cart"></i></a>
+                                        <span>{{Cart::count()}}</span>
+                                    </div>
+                                </li>
+                                <li class="d-none d-lg-block dropdown">
+                                    @if (Auth::check())
+                                        <div class="nomal-text d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
+                                            <img src="{{ !empty(Auth::user()->avatar)? Auth::user()->avatar: '/upload/no-profile.jpg' }}" alt="loading..." width="45px" height="45px" style="border-radius: 50%;" class="margin-right-5px">
+                                            <span class="uppercase">{{ Auth::user()->name }}</span>
+                                        </div>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="{{ url('/dang_xuat') }}" class="padding-left-10px"><i class="fa fa-sign-in-alt"></i> Đăng xuất</a></li>
+                                        </ul>
+                                    @else
+                                        <a href="{{ url('/dang_nhap') }}" class="btn header-btn">Đăng nhập</a>
+                                    @endif
+                                </li>
                             </ul>
-                        </nav>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- main-menu-area-end -->
-    <!-- mobile-menu-area-start -->
-    <div class="mobile-menu-area hidden-md hidden-lg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="mobile-menu">
-                        <nav id="mobile-menu-active">
-                            <ul id="nav">
-                                <li><a href="{{url('/')}}">Trang chủ</a>
-                                </li>
-                                @foreach($categories as $item)
-                                @if($item->parent == 0)
-                                <li><a href="{{url('/')}}/danh_muc/{{$item->id}}">{{$item->name}}</a>
-                                    <ul>
-                                       @foreach($categories as $item1)
-                                       @if($item1->parent == $item->id)
-                                       <li><a href="{{url('/')}}/danh_muc/{{$item1->id}}">{{$item1->name}}</a></li>
-                                       @endif
-                                       @endforeach
-                                   </ul>
-                               </li>
-                               @endif
-                               @endforeach
-                               <li><a href="{{ url('/san_pham') }}">Sản phẩm</a></li>
-                               <li><a href="{{url('/sale')}}">sales off</a></li>
-                               <li><a href="{{ url('/lien_he') }}">Liên hệ</a></li>
-                               <li><a href="{{ url('/gioi_thieu') }}">Giới thiệu chúng tôi</a></li>
-                               @if (Auth::check())
-                                    <li><a href="{{ url('/dang_xuat') }}">Xin chào: <span class="uppercase">{{ Auth::user()->name }}</span> ( Đăng xuất )</a></li>
-                               @else
-                                   <li><a href="{{ url('/dang_nhap') }}">Đăng nhập</a></li>
-                                   <li><a href="{{ url('/dang_ky') }}">Đăng ký</a></li>
-                               @endif
-                           </ul>
-                       </nav>
-                   </div>
-               </div>
-           </div>
-       </div>
-   </div>
-   <!-- mobile-menu-area-end -->
+    <!-- Header End -->
 </header>
+
