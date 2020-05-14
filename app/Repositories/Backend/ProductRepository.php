@@ -29,46 +29,44 @@ class ProductRepository extends BaseRepository
 
     public function getList()
     {
-        return $this->orderBy('created_at','DESC')->paginate(9);
+        return $this->orderBy('created_at','DESC')->paginate(12);
     }
 
     public function getListOld()
     {
-        return $this->orderBy('created_at','ASC')->paginate(9);
+        return $this->orderBy('created_at','ASC')->paginate(12);
     }
 
     public function getListPrice()
     {
-        return $this->orderBy('price','ASC')->paginate(9);
+        return $this->orderBy('price','ASC')->paginate(12);
 
     }
 
     public function getListPriceDesc()
     {
-        return $this->orderBy('price','DESC')->paginate(9);
+        return $this->orderBy('price','DESC')->paginate(12);
 
     }
-    
+
     public function getSearch($search) {
-
-
        $data = Product::where('name', 'like', '%'.$search. '%')
                         ->orWhere('price', $search)
-                        ->get();
-        return $data;                
+                        ->paginate(8);
 
-    }    
+       return $data;
+    }
 
     public function createProduct($data)
-    {              
+    {
         if(isset($data['avatar'])){
             $data['avatar'] = createImages($data['avatar']);
-        }    
+        }
         if(isset($data['images'])){
             $data['images'] = createImages($data['images']);
-        } 
+        }
         $data['nameslug'] = str_slug($data['name']);
-    	$product = Product::create($data);  
+    	$product = Product::create($data);
 
         return true;
     }
@@ -77,12 +75,12 @@ class ProductRepository extends BaseRepository
     {
         if(isset($data['avatar'])){
             $data['avatar'] = createImages($data['avatar']);
-        }    
+        }
         if(isset($data['images'])){
             $data['images'] = createImages($data['images']);
-        } 
-        $data['nameslug'] = str_slug($data['name']);    
+        }
+        $data['nameslug'] = str_slug($data['name']);
         return $data;
     }
-   
+
 }

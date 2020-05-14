@@ -63,13 +63,13 @@
                                             <li><a href="#"><i class="fa fa-star"></i></a></li>
                                         </ul>
                                     </div>
-                                    <h4><a href="{{url('/')}}san_pham/{{$product->id}}">{{$product->name}}</a></h4>
+                                    <h4><a href="{{ url("/san_pham/$product->id") }}">{{$product->name}}</a></h4>
                                     <div class="product-price">
                                         <ul>
                                             @if($product->sale > 0)
-                                                <li>{{number_format($product->price)}} đ</li>
+                                                <li>{{number_format($product->price - ($product->sale)*($product->price)/100)}} đ</li>
                                                 <li class="old-price">
-                                                    ${{number_format(($product->sale)*($product->price)/100)}} đ
+                                                    {{number_format($product->price)}} đ
                                                 </li>
                                             @else
                                                 <li>{{number_format($product->price)}} đ</li>
@@ -79,17 +79,11 @@
                                 </div>
                                 <div class="product-link">
                                     <div class="product-button">
-                                        <a href="{{url('/')}}cart/add/{{$product->id}}" title="Add to cart">
-                                            <i class="fa fa-shopping-cart"></i>Thêm vào giỏ
-                                        </a>
+                                        <a href="{{ url("/cart/add/$product->id") }}" title="Add to cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
                                     </div>
                                     <div class="add-to-link">
                                         <ul>
-                                            <li>
-                                                <a href="{{url('/')}}san_pham/{{$product->id}}" title="Details">
-                                                    <i class="fa fa-external-link-alt"></i>
-                                                </a>
-                                            </li>
+                                            <li><a href="{{ url("/san_pham/$product->id") }}" title="Details"><i class="fa fa-external-link-alt"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -163,13 +157,13 @@
                                             <li><a href="#"><i class="fa fa-star"></i></a></li>
                                         </ul>
                                     </div>
-                                    <h4><a href="{{url('/')}}san_pham/{{$product->id}}">{{$product->name}}</a></h4>
+                                    <h4><a href="{{ url("/san_pham/$product->id") }}">{{$product->name}}</a></h4>
                                     <div class="product-price">
                                         <ul>
                                             @if($product->sale > 0)
-                                                <li>{{number_format($product->price)}} đ</li>
-                                                <li class="old-price">{{number_format(($product->sale)*($product->price)/100)}}
-                                                    đ
+                                                <li>{{number_format($product->price - ($product->sale)*($product->price)/100)}} đ</li>
+                                                <li class="old-price">
+                                                    {{number_format($product->price)}} đ
                                                 </li>
                                             @else
                                                 <li>{{number_format($product->price)}} đ</li>
@@ -179,13 +173,11 @@
                                 </div>
                                 <div class="product-link">
                                     <div class="product-button">
-                                        <a href="{{url('/')}}cart/add/{{$product->id}}" title="Add to cart"><i
-                                                class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
+                                        <a href="{{ url("/cart/add/$product->id") }}" title="Add to cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
                                     </div>
                                     <div class="add-to-link">
                                         <ul>
-                                            <li><a href="{{url('/')}}san_pham/{{$product->id}}" title="Details"><i
-                                                        class="fa fa-external-link-alt"></i></a></li>
+                                            <li><a href="{{ url("/san_pham/$product->id") }}" title="Details"><i class="fa fa-external-link-alt"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -200,6 +192,7 @@
         </div>
     </div>
     <!-- bestseller-area-end -->
+
     <!-- new-book-area-start -->
     <div class="new-book-area pb-100">
         <div class="container">
@@ -245,13 +238,13 @@
                                             <li><a href="#"><i class="fa fa-star"></i></a></li>
                                         </ul>
                                     </div>
-                                    <h4><a href="{{url('/')}}san_pham/{{$product->id}}">{{$product->name}}</a></h4>
+                                    <h4><a href="{{ url("/san_pham/$product->id") }}">{{$product->name}}</a></h4>
                                     <div class="product-price">
                                         <ul>
                                             @if($product->sale > 0)
-                                                <li>{{number_format($product->price)}} đ</li>
-                                                <li class="old-price">{{number_format(($product->sale)*($product->price)/100)}}
-                                                    đ
+                                                <li>{{number_format($product->price - ($product->sale)*($product->price)/100)}} đ</li>
+                                                <li class="old-price">
+                                                    {{number_format($product->price)}} đ
                                                 </li>
                                             @else
                                                 <li>{{number_format($product->price)}} đ</li>
@@ -261,13 +254,11 @@
                                 </div>
                                 <div class="product-link">
                                     <div class="product-button">
-                                        <a href="{{url('/')}}cart/add/{{$product->id}}" title="Add to cart"><i
-                                                class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
+                                        <a href="{{ url("/cart/add/$product->id") }}" title="Add to cart"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ</a>
                                     </div>
                                     <div class="add-to-link">
                                         <ul>
-                                            <li><a href="{{url('/')}}san_pham/{{$product->id}}" title="Details"><i
-                                                        class="fa fa-external-link-alt"></i></a></li>
+                                            <li><a href="{{ url("/san_pham/$product->id") }}" title="Details"><i class="fa fa-external-link-alt"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -282,7 +273,50 @@
         </div>
     </div>
     <!-- new-book-area-start -->
+
     <!-- banner-static-area-start -->
+    <div class="banner-area banner-res-large ptb-35 clear-both">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-banner">
+                        <div class="banner-img">
+                            <a href="#"><img src="{{asset('/frontend/img/banner/1.png')}}" alt="banner" /></a>
+                        </div>
+                        <div class="banner-text">
+                            <h4>Miễn phí giao hàng</h4>
+                            <p class="no-margin">Cho đơn hàng trên 200.000đ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-banner">
+                        <div class="banner-img">
+                            <a href="#"><img src="{{asset('/frontend/img/banner/2.png')}}" alt="banner" /></a>
+                        </div>
+                        <div class="banner-text">
+                            <h4>Hoàn tiền trong 3 ngày</h4>
+                            <p class="no-margin">Hoàn 100% tiền mua hàng</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-banner mrg-none-xs">
+                        <div class="banner-img">
+                            <a href="#"><img src="{{asset('/frontend/img/banner/4.png')}}" alt="banner" /></a>
+                        </div>
+                        <div class="banner-text">
+                            <h4>Tư vấn và hỗ trợ</h4>
+                            @foreach($option as $item)
+                                <p class="no-margin">Liên hệ : + {{$item->phone}}</p>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner-area-end -->
 
     <!-- END section -->
 
@@ -320,11 +354,13 @@
                                         <?php $j = 1; ?>
                                         @foreach($imgs as $img)
                                             @if($j == 1)
-                                                <a class="active" href="#image-{{$j}}"><img src="{{$img}}" alt=""
-                                                                                            style="width: 80px; height: 100px"/></a>
+                                                <a class="active" href="#image-{{$j}}">
+                                                    <img src="{{$img}}" alt=""style="width: 80px; height: 100px"/>
+                                                </a>
                                             @else
-                                                <a href="#image-{{$j}}"><img src="{{$img}}" alt=""
-                                                                             style="width: 80px; height: 100px"/></a>
+                                                <a href="#image-{{$j}}">
+                                                    <img src="{{$img}}" alt="" style="width: 80px; height: 100px"/>
+                                                </a>
                                             @endif
                                             <?php $j++; ?>
                                         @endforeach
@@ -335,7 +371,7 @@
                                 <div class="modal-pro-content">
                                     <h3>{{$product->name}}</h3>
                                     <div class="price">
-                                        <b class="text-warning">{{number_format($product->price)}} đ</b>
+                                        <b class="text-warning">{{number_format($product->price - ($product->sale)*($product->price)/100)}} đ</b>
                                     </div>
                                     <p>{{$product->short_description}} ...</p>
                                     <br>
@@ -349,7 +385,7 @@
                                                     Hết hàng
                                                 @endif
                                         </span>
-                                        <a type="button" href="{{url('/')}}cart/add/{{$product->id}}" title="Add to cart"
+                                        <a type="button" href="{{ url("/cart/add/$product->id") }}" title="Add to cart"
                                         class="btn btn-primary margin-top-20px clear-both">Thêm vào giỏ hàng</a>
                                     </form>
                                 </div>

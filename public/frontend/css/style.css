@@ -13301,6 +13301,67 @@ footer {
 .productModal .modal-content {
     padding: 20px 5px 35px 10px;
 }
+.banner-area {
+    background: gainsboro;
+    padding: 30px 0 30px 0;
+    margin-bottom: 25px;
+}
+.single-banner {
+    display: flex;
+    align-items: center;
+}
+.banner-img {
+    margin-right: 15px;
+}
+.no-margin {
+    margin: 0!important;
+}
+#category-list li {
+    padding: 5px 10px;
+    background: gainsboro;
+    border-radius: 5px;
+    /*min-width: 200px;*/
+    float: left;
+    margin: 5px;
+}
+#category-list li:hover, #category-list li:focus, #category-list li.active {
+    background: orange;
+}
+.toolbar-sorter .list {
+    z-index: 99999;
+}
+.cart-main-area a {
+    color: black;
+}
+.cart-main-area table th {
+    color: black!important;
+}
+.product-quantity input {
+    width: 50px;
+    padding: 0 0 0 15px;
+}
+.buttons-cart li {
+    padding: 6px 20px;
+    background: #ffc107;
+    float: left;
+    margin: 5px;
+    border-radius: 10px;
+}
+.buttons-cart li:hover {
+    background: orange;
+}
+.buttons-cart li a {
+    color: white;
+}
+.cart_totals table {
+    width: 100%;
+}
+.product-main-area .slides img {
+    max-width: 250px;
+}
+.font-size-30 {
+    font-size: 30px!important;
+}
 
 
 

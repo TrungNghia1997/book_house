@@ -37,10 +37,8 @@ class HomeController extends Controller
             return view('users.elements.search', compact('productRepository', 'search'));
         }
         else {
-
             return redirect()->back()->with('alert', 'Không có thông tin về sản phẩm này');
         }
-
     }
 
     public function getSale()

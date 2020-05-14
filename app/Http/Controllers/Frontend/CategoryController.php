@@ -72,8 +72,7 @@ class CategoryController extends Controller
         }
 
         $categoryRepository = $this->categoryRepository->all();
-        $productRandom = DB::table('products')->inRandomOrder()->limit(6)->get();
-    	return view('users.elements.category', compact('productRepository','productRandom','category', 'categoryRepository'));
+    	return view('users.elements.category', compact('productRepository','category', 'categoryRepository'));
 
     }
 }

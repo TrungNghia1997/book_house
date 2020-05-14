@@ -36,7 +36,7 @@
                                         <li class="{{ Request::is('/')? 'active': '' }}"><a href="{{ asset('/') }}">Trang chủ</a>
                                         </li>
 
-                                        <li class="{{ (Request::is('san_pham') || substr_count(Request::url(), '/danh_muc/'))? 'active': '' }}">
+                                        <li class="{{ (substr_count(Request::url(), 'san_pham') || substr_count(Request::url(), '/danh_muc/'))? 'active': '' }}">
                                             <a href="{{ url('/san_pham') }}">Sản phẩm</a>
                                         </li>
                                         <li class="{{ Request::is('sale')? 'active': '' }}"><a href="{{url('/sale')}}">sales off</a></li>
