@@ -27,15 +27,13 @@
                     <!-- product-main-area-start -->
                     <div class="product-main-area">
                         <div class="row">
-                            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 text-center">
-                                <div class="flexslider">
-                                    <ul class="slides">
+                            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 bg-gainsboro pb-15 pt-15">
+                                <div class="slider-area">
+                                    <div class="slider-active owl-carousel">
                                         @foreach($imgs as $img)
-                                        <li data-thumb="{{$img}}">
-                                            <img src="{{$img}}" alt="woman" />
-                                        </li>
+                                            <img class="single-slider bg-img" src="{{ $img }}">
                                         @endforeach
-                                    </ul>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
@@ -119,14 +117,15 @@
                     </div>
 
                     <!-- new-book-area-start -->
-                    <div class="new-book-area mt-60">
-                        <div class="section-title text-center mb-30">
+                    <div class="new-book-area mt-100">
+                        <div class="section-title text-center mb-40">
                             <h3>Sản phẩm cùng loại</h3>
                         </div>
                         <div class="tab-active-2 owl-carousel owl-loaded owl-drag">
                             <!-- single-product-start -->
-                            @if(count($productCategory) > 0)
+                            @if(count($productCategory) > 0 && $productCategory[0]->id != $productRepository->id)
                             @foreach($productCategory as $product)
+                                @if($product->id != $productRepository->id)
                                 <div class="product-wrapper">
                                     <div class="product-img">
                                         <a href="#">
@@ -183,6 +182,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                @endif
                             @endforeach
                             @else
                                 <p class="text-center"><i>Không có sản phẩm phù hợp!</i></p>
