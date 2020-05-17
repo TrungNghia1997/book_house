@@ -86,7 +86,7 @@
                                     <tr class="cart-subtotal">
                                         <th class="text-right">Tổng chưa giảm giá</th>
                                         <td>
-                                            <span class="amount">{{ $initial }} đ</span>
+                                            <span class="amount">{{ str_replace('.00', '', $initial) }} đ</span>
                                         </td>
                                     </tr>
 

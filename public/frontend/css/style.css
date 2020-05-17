@@ -13381,6 +13381,10 @@ footer {
 .bg-gainsboro {
     background: gainsboro;
 }
+.slider-area:hover .slider-active.owl-carousel .owl-nav .owl-prev, .slider-area:hover .slider-active.owl-carousel .owl-nav .owl-next {
+    opacity: 1;
+    visibility: visible;
+}
 
 
 @media only screen and (max-width: 1200px) {
